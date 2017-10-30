@@ -1,16 +1,22 @@
 var router  = require('express').Router();  //get an instance of the express Router
 var request = require('request');
 var fs      = require('fs');
-var cache   = require('memory-cache');
 var crypto  = require('crypto');
 var config  = require('../config.js');
+var Util    = require('../lib/util.js');
+
+Util.getAccessToken()
+.then(function(token){
+    console.log('获取 token 成功:', token);
+});
 
 router.use(function(req, res, next){
     console.log('index router');
     next();
 });
 
-router.get('/', function(req, res){
+// 微信认证接口
+router.get('/wxauth', function(req, res){
 
     var token = config.token;
     
@@ -40,54 +46,26 @@ router.get('/', function(req, res){
    	}
 });
 
-router.get('/wechatAuth', function(req, res){
+// 将签名信息传给客户端
+router.get('/wechatConfig', function(req, res){
     var url = req.query.url;
-    // var 
+    Util.getAPITicket()
+    .then(function(ticket){
+        var nonceStr = Util.getNonceStr();
+        var timestamp = Util.getTimestamp();
+        var signature = Util.getSignature(ticket, nonceStr, timestamp, url);
+        
+        var data = {
+            nonceStr: nonceStr,
+            timestamp: timestamp,
+            appId: config.appID,
+            signature: signature,
+            url: url
+        };
+
+        res.status(200).jsonp(data);
+    });
 });
 
 
 module.exports = router;
-
-    // router.route('/api/:bear_id')
-    //     //get a single bear
-    //     .get(function(req, res){
-
-    //         Bear.findById(req.params.bear_id, function(err, bear){
-    //             if(err)
-    //                 res.send(err);
-                
-    //             res.json(bear);
-    //         });
-    //     })
-    //     //updated bears
-    //     .put(function(req, res){
-
-    //         Bear.findById(req.params.bear_id, function(err, bear){
-
-    //             if(err)
-    //                 res.send(err);
-                
-    //             bear.name = req.body.name;
-
-    //             bear.save(function(err){
-
-    //                 if(err)
-    //                     res.send(err);
-                    
-    //                 res.json({message: 'Bear updated!'});
-    //             });
-    //         });
-    //     })
-    //     //delete bears
-    //     .delete(function(req, res){
-
-    //         Bear.remove({
-    //             _id: req.params.bear_id
-    //         }, function(err, bear){
-
-    //             if(err)
-    //                 res.send(err);
-                
-    //             res.json({message: 'Successfully deleted!'});
-    //         });
-    //     });
