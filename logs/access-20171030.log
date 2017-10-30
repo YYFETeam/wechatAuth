@@ -1,0 +1,6 @@
+::1 - - [30/Oct/2017:02:31:30 +0000] "GET / HTTP/1.1" 200 15 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [30/Oct/2017:02:31:31 +0000] "GET /favicon.ico HTTP/1.1" 500 16 "http://localhost:8091/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [30/Oct/2017:02:31:59 +0000] "GET / HTTP/1.1" 200 11 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [30/Oct/2017:02:31:59 +0000] "GET /favicon.ico HTTP/1.1" 500 16 "http://localhost:8091/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [30/Oct/2017:02:32:52 +0000] "GET / HTTP/1.1" 304 - "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [30/Oct/2017:02:32:52 +0000] "GET /favicon.ico HTTP/1.1" 500 16 "http://localhost:8091/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
