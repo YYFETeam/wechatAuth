@@ -1,0 +1,5 @@
+::1 - - [31/Oct/2017:02:05:12 +0000] "GET /wechatConfig?url=test.ijarvis.cn&callback=fn HTTP/1.1" 200 202 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [31/Oct/2017:02:06:05 +0000] "GET /wechatConfig?url=test.ijarvis.cn&callback=fn HTTP/1.1" 200 202 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [31/Oct/2017:02:06:05 +0000] "GET /favicon.ico HTTP/1.1" 404 14 "http://localhost:8091/wechatConfig?url=test.ijarvis.cn&callback=fn" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [31/Oct/2017:02:06:08 +0000] "GET /wechatConfig?url=test.ijarvis.cn&callback=fn HTTP/1.1" 200 202 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
+::1 - - [31/Oct/2017:02:07:47 +0000] "GET /wechatshare.js HTTP/1.1" 200 6596 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"

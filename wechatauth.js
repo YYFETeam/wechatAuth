@@ -45,7 +45,7 @@ app.use(morgan('combined', {
 
 var port = process.env.PORT || 8091;  //set port
 
-
+app.use(express.static('app'));
 //REGISTER OUR ROUTES
 //===================================
 app.use('/', indexRouter);
@@ -54,7 +54,7 @@ app.use('/', indexRouter);
 app.use(function(req, res, next){
     var err = new Error('not Found');
     err.status = 404;
-    next(err);
+    res.status(404).send(err);
 });
 
 app.use(function(err, req, res, next) {
